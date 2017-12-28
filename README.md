@@ -5,7 +5,7 @@ An ever evolving boilerplate for starting a React project
 - Live reload (webpack-dev-server)
 
 ## Usage
-`yarn dev-server`
+`yarn ; yarn dev-server`
 
 
 <!-- # What's missing?
