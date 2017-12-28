@@ -24,6 +24,7 @@
     "ansi-html": "^0.0.7",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "connect-livereload": "^0.6.0",
