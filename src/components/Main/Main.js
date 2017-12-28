@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Main extends Component {
   state = {
-    value: "TITLE",
+    value: "This title can be changed",
     count: 0
   };
 
@@ -10,31 +10,43 @@ export default class Main extends Component {
     // this.props.fetchData();
   };
 
-  onIncrease = () => {
-    this.setState({
-      count: this.state.count + 1
+  onIncrement = () => {
+    this.setState(() => {
+      return {
+        count: this.state.count + 1
+      }      
     });
   }
 
-  onDecrease = () => {
-    this.setState({
-      count: this.state.count - 1
+  onDecrement = () => {
+    this.setState(() => {
+      return {
+        count: this.state.count - 1
+      }      
     });
   };
 
   onReset = () => {
-    this.setState({
-      count: 0
+    this.setState(() => {
+      return {
+        count: 0
+      }      
     });
   };
 
   handleChagneTitle = (e) => {
     e.preventDefault();
-    this.setState({
-      value: e.target.elements.input.value
-    });
 
-    e.target.elements.input.value = '';
+    if (e.target.elements.input.value) {
+      const value = e.target.elements.input.value
+      console.log(value);
+      this.setState(() => {
+        return {
+          value
+        }        
+      });      
+      e.target.elements.input.value = '';
+    }
   }
 
   render() {
@@ -48,8 +60,8 @@ export default class Main extends Component {
           <button>Change Title</button>
         </form>
         <p>{this.state.count}</p>
-        <button onClick={this.onIncrease}>Increase</button>
-        <button onClick={this.onDecrease}>Decrease</button>
+        <button onClick={this.onIncrement}>Increase</button>
+        <button onClick={this.onDecrement}>Decrease</button>
         <button onClick={this.onReset}>Reset</button>
       </div>
     );
