@@ -10,7 +10,7 @@ export default class Main extends React.Component {
     // const { fetchSatellitesError, isFetchingSatellites, satelliteStatus } = this.props;
     return (
       <div>
-        <p>HELLO</p>
+        <p>Hello there </p>
       </div>
     );
   }

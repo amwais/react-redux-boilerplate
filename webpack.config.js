@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
  context: path.join(__dirname, 'src'),
- entry: [
-   './App.js',
- ],
+ entry: {
+  app: './App.js'
+},
  output: {
    path: path.join(__dirname, 'public'),
    filename: 'bundle.js',
@@ -25,4 +25,9 @@ module.exports = {
      path.join(__dirname, 'node_modules'),
    ],
  },
+ devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        historyApiFallback: true
+    }
 };

@@ -5,11 +5,12 @@ import { Provider } from 'react-redux';
 import store from './store';
 import Main from './components/Main';
 
-const jsx = (
-  <Provider store={store}>
-    <Main />
-  </Provider>
-);
+const Jsx = () => {
+  return (
+    <Provider store={store}>
+      <Main />
+    </Provider>
+  );
+};
 
-
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<Jsx />, document.getElementById('app'));

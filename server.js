@@ -4,9 +4,15 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const app = express();
  
+// livereload(app, config={})
+
 const compiler = webpack(webpackConfig);
  
 app.use(express.static(__dirname + '/public'));
+
+app.use(require('connect-livereload')({
+  port: 35729
+}));
  
 app.use(webpackDevMiddleware(compiler, {
   hot: true,

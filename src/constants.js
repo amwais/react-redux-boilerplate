@@ -1,1 +1,1 @@
-export const URL_PROTOCOL = 'planetglimpse://';
+export const URL_PROTOCOL = 'boilerplate://';
