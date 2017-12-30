@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import ConnectedComponent from './components/ConnectedComponent';
+import AppRouter from './routers/AppRouter';
 
-import store from './store';
-import Main from './components/Main';
+const store = configureStore();
 
 const Jsx = () => {
   return (
     <Provider store={store}>
-      <Main />
+      <AppRouter />
     </Provider>
   );
 };
