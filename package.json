@@ -29,6 +29,7 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "connect-livereload": "^0.6.0",
+    "eslint-config-prettier": "^2.9.0",
     "express": "^4.16.2",
     "html-entities": "^1.2.1",
     "loglevel": "^1.6.0",
@@ -41,7 +42,14 @@
     "redux-thunk": "^2.2.0",
     "remote-redux-devtools": "^0.5.12",
     "sockjs-client": "^1.1.4",
-    "webpack": "^3.8.1",
+    "webpack": "^3.10.0",
     "webpack-dev-middleware": "^1.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1"
   }
 }

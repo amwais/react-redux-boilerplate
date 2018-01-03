@@ -11,21 +11,21 @@ const compiler = webpack(webpackConfig);
 app.use(express.static(__dirname + '/public'));
 
 app.use(require('connect-livereload')({
-  port: 35729
+	port: 35729
 }));
  
 app.use(webpackDevMiddleware(compiler, {
-  hot: true,
-  filename: 'bundle.js',
-  publicPath: '/',
-  stats: {
-    colors: true,
-  },
-  historyApiFallback: true,
+	hot: true,
+	filename: 'bundle.js',
+	publicPath: '/',
+	stats: {
+		colors: true,
+	},
+	historyApiFallback: true,
 }));
  
 const server = app.listen(3000, function() {
-  const host = server.address().address;
-  const port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+	const host = server.address().address;
+	const port = server.address().port;
+	console.log('Example app listening at http://%s:%s', host, port);
 });

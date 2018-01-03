@@ -1,8 +1,8 @@
-export const setTitle = ({ title }) => ({
-  type: 'SET_TITLE',
-  title
+export const setTitle = (title) => ({
+	type: 'SET_TITLE',
+	title,
 });
 
 export const resetTitle = () => ({
-  type: 'RESET_TITLE'
+	type: 'RESET_TITLE',
 });
