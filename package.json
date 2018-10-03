@@ -1,55 +1,30 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "udemy-mern-course",
   "version": "1.0.0",
-  "description": "An ever evolving boilerplate for starting a React project",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "compile": "webpack",
+    "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "dev-server": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amwais/react-redux-boilerplate.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Amir Waisman",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amwais/react-redux-boilerplate/issues"
-  },
-  "homepage": "https://github.com/amwais/react-redux-boilerplate#readme",
   "dependencies": {
-    "ansi-html": "^0.0.7",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-latest": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "connect-livereload": "^0.6.0",
-    "eslint-config-prettier": "^2.9.0",
-    "express": "^4.16.2",
-    "html-entities": "^1.2.1",
-    "loglevel": "^1.6.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
-    "redux-actions": "^2.2.1",
-    "redux-thunk": "^2.2.0",
-    "remote-redux-devtools": "^0.5.12",
-    "sockjs-client": "^1.1.4",
-    "webpack": "^3.10.0",
-    "webpack-dev-middleware": "^1.12.0"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.6",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.5.0"
   },
   "devDependencies": {
-    "eslint": "^4.14.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1"
+    "nodemon": "^1.18.3"
   }
 }
