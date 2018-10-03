@@ -1,31 +1,37 @@
 const express = require('express');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpack = require('webpack');
-const webpackConfig = require('./webpack.config.js');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+
+const users = require('./routes/api/users');
+
 const app = express();
- 
-// livereload(app, config={})
 
-const compiler = webpack(webpackConfig);
- 
-app.use(express.static(__dirname + '/public'));
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use(require('connect-livereload')({
-  port: 35729
-}));
- 
-app.use(webpackDevMiddleware(compiler, {
-  hot: true,
-  filename: 'bundle.js',
-  publicPath: '/',
-  stats: {
-    colors: true,
-  },
-  historyApiFallback: true,
-}));
- 
-const server = app.listen(3000, function() {
-  const host = server.address().address;
-  const port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
-});
+// DB Config
+
+const db = require('./config/keys').mongoURI;
+
+// Connect to MongoDB
+
+mongoose
+	.connect(db, { useNewUrlParser: true })
+	.then(() => console.log('MongoDB connected.'))
+	.catch((err) => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport strategy config
+require('./config/passport')(passport);
+
+// Use Routes
+
+app.use('/api/users', users);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Server listening on port ${port}...`));
